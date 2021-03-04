@@ -1,7 +1,8 @@
 const app = require('./app.js');
 
-const num = 7;
-const orderDesc = true;
+var args = process.argv.slice(2);
+const num = parseInt(args[0]);
+const orderDesc = false;
 
 try {
   console.log(`Numeros primos hasta ${num}`, app.getPrimes(num, orderDesc));
