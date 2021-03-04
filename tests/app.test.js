@@ -1,4 +1,4 @@
-const app = require('../app');
+const app = require('../app.js');
 
 const nonAcceptedValues = ['abc', null, undefined, NaN, '', false, 0, 1, -5];
 
@@ -38,5 +38,20 @@ describe('getPrimes', () => {
   it('Retornar un array con por lo menos un valor', () => {
     const result = app.getPrimes(5);
     expect(result.length).toBeGreaterThan(0);
+  });
+
+  it('Retornar un array ordenado descendentemente', () => {
+    const orderDesc = true;
+    const num = 5
+    const resultArray = app.getPrimes(num, orderDesc);
+    const totalPrimes = resultArray.length - 1;
+    expect(resultArray[0] > resultArray[totalPrimes]).toBe(true);
+  });
+
+  it('Retornar un array ordenado ascendentemente', () => {
+    let num = 5
+    const resultArray = app.getPrimes(num);
+    const totalPrimes = resultArray.length - 1;
+    expect(resultArray[0] < resultArray[totalPrimes]).toBe(true);
   });
 });

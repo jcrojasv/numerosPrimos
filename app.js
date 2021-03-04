@@ -6,7 +6,7 @@ function setArrayElements(numberOfElements) {
   return new Array(numberOfElements+1).fill(true);
 }
 
-function getPrimes(num) {
+function getPrimes(num, orderDesc) {
 
   if (!numberIsValid(num)) {
     throw 'El valor debe ser un número entero mayor o igual a 2.';
@@ -25,8 +25,10 @@ function getPrimes(num) {
     }
   }
 
-  return primesElements;
+
+  return orderDesc ? primesElements.reverse() : primesElements;
 };
+
 
 module.exports = {
   numberIsValid,
