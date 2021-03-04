@@ -3,11 +3,16 @@ Obtiene los números primos hasta un "n" dado
 
 ## Para instalar
 ```
-docker-compose up
+Hacer el build
 
-Para ejecutar npm run start numero
+docker build -t get-primos .
 
-donde número es el valor máximo de números primos a generar
+Ejecutar luego con el siguiente comando:
 
+docker run -t get-primos sh -c "npm run start <valor>"
 
-Para ejecutar pruebas npm run test
+donde valor debe ser un número entero mayor o igual a 2
+
+Para ejecutar los test
+
+docker run -t get-primos sh -c "npm run test"
